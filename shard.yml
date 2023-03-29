@@ -1,13 +1,19 @@
-name: src
+name: gxg
 version: 0.1.0
 
 authors:
   - G. Gibson <mistergibson@gxg.dev>
 
 targets:
-  src:
-    main: src/src.cr
+  gxg:
+    main: src/gxg.cr
 
 crystal: 1.7.3
 
 license: MIT
+
+dependencies:
+  anyolite:
+    github: Anyolite/anyolite
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
