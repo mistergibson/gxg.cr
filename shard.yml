@@ -1,0 +1,13 @@
+name: src
+version: 0.1.0
+
+authors:
+  - G. Gibson <mistergibson@gxg.dev>
+
+targets:
+  src:
+    main: src/src.cr
+
+crystal: 1.7.3
+
+license: MIT
