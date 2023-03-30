@@ -59,11 +59,21 @@ module Gem
 	def self.set_default_prefix(the_path=nil)
 		if the_path
 			@default_dir = the_path
+			@gem_path = the_path
 		end
 	end
 end
 Gem.set_default_prefix("#{gxg_root}/Libraries/lib/ruby/gems/3.0.0")
 #
-puts RbConfig::CONFIG.inspect
-puts Gem.default_dir.inspect
+require 'rubygems/gem_runner'
+require 'rubygems/exceptions'
 
+class Object
+	private
+	def install_gem(gem_name=nil)
+		if gem_name
+			Gem::GemRunner.new.run ["install", gem_name]
+		end
+	end
+	public
+end
