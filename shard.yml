@@ -15,5 +15,7 @@ license: MIT
 dependencies:
   anyolite:
     github: Anyolite/anyolite
+  zeromq:
+    github: crystal-community/zeromq-crystal
   sqlite3:
     github: crystal-lang/crystal-sqlite3
