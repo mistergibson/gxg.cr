@@ -67,13 +67,19 @@ Gem.set_default_prefix("#{gxg_root}/Libraries/lib/ruby/gems/3.0.0")
 #
 require 'rubygems/gem_runner'
 require 'rubygems/exceptions'
-
+module Gem::UserInteraction
+	def terminate_interaction(exit_code = 0)
+		# Suppress the instruction to exit ruby:
+		# ui.terminate_interaction exit_code
+	  end
+end
 class Object
 	private
-	def install_gem(gem_name=nil)
-		if gem_name
-			Gem::GemRunner.new.run ["install", gem_name]
+	def gem(commands=nil)
+		if commands.is_a?(::String)
+			Gem::GemRunner.new.run commands.split(" ")
 		end
 	end
 	public
 end
+# ### ARGV importation
