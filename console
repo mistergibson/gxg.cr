@@ -1,0 +1,3 @@
+#!/bin/bash
+source /etc/profile
+./Libraries/ruby/bin/irb -r ./Libraries/lib/bootstrap.rb

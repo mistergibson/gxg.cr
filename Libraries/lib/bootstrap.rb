@@ -96,5 +96,4 @@ else
 end
 #
 require "gxg-framework"
-# # ### Console
-# require_relative "./console.rb"
+#

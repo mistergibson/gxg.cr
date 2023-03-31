@@ -4,13 +4,41 @@ shards:
     git: https://github.com/anyolite/anyolite.git
     version: 1.0.0
 
+  athena-console:
+    git: https://github.com/athena-framework/console.git
+    version: 0.3.2
+
+  bindgen:
+    git: https://github.com/papierkorb/bindgen.git
+    version: 0.7.0+git.commit.b9a50696f99f3169649336f6cacd98c4f61d5ccc
+
   db:
     git: https://github.com/crystal-lang/crystal-db.git
     version: 0.11.0
 
+  mysql:
+    git: https://github.com/crystal-lang/crystal-mysql.git
+    version: 0.14.0
+
+  pg:
+    git: https://github.com/will/crystal-pg.git
+    version: 0.26.0
+
+  qt5:
+    git: https://github.com/papierkorb/qt5.cr.git
+    version: 0.2.0+git.commit.b574f43334c068f9d61e496c656be79886a4468e
+
+  spoved:
+    git: https://github.com/spoved/spoved.cr.git
+    version: 0.8.6
+
   sqlite3:
     git: https://github.com/crystal-lang/crystal-sqlite3.git
     version: 0.19.0
+
+  toka:
+    git: https://github.com/kalinon/toka.git
+    version: 0.1.2+git.commit.622fb6642b158b10517fb26b69e2e63be00980d9
 
   zeromq:
     git: https://github.com/crystal-community/zeromq-crystal.git

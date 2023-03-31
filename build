@@ -1,0 +1,3 @@
+#!/bin/bash
+source /etc/profile
+crystal build src/gxg.cr --define use_general_object_format_chars --define anyolite_implementation_ruby_3
