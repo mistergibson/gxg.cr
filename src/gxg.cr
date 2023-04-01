@@ -25,26 +25,30 @@ module GxG
     def self.argv()
       ::ARGV
     end
-    def self.output(the_string : String =  "") : Nil
-      puts the_string.to_s
-    end
   end
 end
 # ### Sqlite3
 require "./sqlite3.cr"
-# ### Sqlite3
+# ### Mysql
 require "./mysql.cr"
-# ### Sqlite3
+# ### Postgres
 require "./postgres.cr"
+# ### GUI support
+# FIX: https://github.com/Papierkorb/qt5.cr/issues/61
+# require "./gui.cr"
 # ### Start Ruby
 require "./scripting.cr"
+module GxG
+  def self.shutdown
+    GxG::RUBY.close
+    exit 0
+  end
+end
 # ### Console support
 require "./console.cr"
 if use_console
   #
+  # console = GxG::Console.new
   console = GxG::SimpleIO.new
   console.run
-  # "require '#{gxg_root}/Libraries/lib/console.rb'".run_script
 end
-# ### GUI support
-# require "./gui.cr"
