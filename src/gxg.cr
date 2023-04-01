@@ -1,4 +1,6 @@
-gxg_root = File.expand_path("../", File.dirname(__FILE__))
+module GxG
+  ROOT = File.expand_path("../", File.dirname(__FILE__))
+end
 require "option_parser"
 use_console = false
 OptionParser.parse do |parser|
@@ -23,6 +25,9 @@ module GxG
     def self.argv()
       ::ARGV
     end
+    def self.output(the_string : String =  "") : Nil
+      puts the_string.to_s
+    end
   end
 end
 # ### Sqlite3
@@ -37,7 +42,9 @@ require "./scripting.cr"
 require "./console.cr"
 if use_console
   #
-  "require '#{gxg_root}/Libraries/lib/console.rb'".run_script
+  console = GxG::SimpleIO.new
+  console.run
+  # "require '#{gxg_root}/Libraries/lib/console.rb'".run_script
 end
 # ### GUI support
 # require "./gui.cr"

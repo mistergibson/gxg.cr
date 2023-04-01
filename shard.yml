@@ -26,6 +26,9 @@ dependencies:
   athena-console:
     github: athena-framework/console
     version: ~> 0.3.0
+  crysterm:
+    github: crystallabs/crysterm
+    branch: master
   qt5:
     github: Papierkorb/qt5.cr
     branch: master-ready-to-use
