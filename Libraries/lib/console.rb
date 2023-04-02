@@ -17,15 +17,15 @@ if defined?(::External)
     module GxG
         RETURN_LOOP = ShimIO.new
     end
-    ::STDOUT = GxG::RETURN_LOOP
-    ::STDERR = GxG::RETURN_LOOP
-    module GxG
-        if const_defined?(:LOG)
-          remove_const(:LOG)
-        end
-        LOG = ::GxG::Events::LogRing.new()
-    end
-    ::GxG::LOG[:default] = ::Logger.new(STDOUT)
-    ::GxG::LOG[:default].level = ::Logger::INFO
+    # ::STDOUT = GxG::RETURN_LOOP
+    # ::STDERR = GxG::RETURN_LOOP
+    # module GxG
+    #     if const_defined?(:LOG)
+    #       remove_const(:LOG)
+    #     end
+    #     LOG = ::GxG::Events::LogRing.new()
+    # end
+    # ::GxG::LOG[:default] = ::Logger.new(STDOUT)
+    # ::GxG::LOG[:default].level = ::Logger::INFO
 end
 #

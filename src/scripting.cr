@@ -1,3 +1,4 @@
+# puts STDOUT.class.inspect
 require "anyolite"
 # ### Ruby core and external publications
 module GxG
@@ -17,7 +18,9 @@ module GxG
       the_string = ""
       GxG::RUBY_SAFETY.synchronize do
         if GxG::RUBY_BUFFER.size > 0
-          the_string = GxG::RUBY_BUFFER.shift.to_s
+          GxG::RUBY_BUFFER.size.times do
+            the_string = the_string + GxG::RUBY_BUFFER.shift.to_s
+          end
         end
         # puts GxG::RUBY_BUFFER.inspect
       end
@@ -33,5 +36,21 @@ class String
     end
   end
 end
+# ### ShimIO attempt
+# class ShimIO < IO::FileDescriptor
+#   def read(slice : Bytes) : Int32
+#     data = GxG::External.dump()
+#     data.to_s.size
+#   end
+#   def write(slice : Bytes) : Nil
+#     GxG::External.output(slice.to_s)
+#     nil
+#   end
+# end
+# module GxG
+#   RETURN_LOOP = ShimIO.new(1)
+# end
+# STDOUT.reopen(GxG::RETURN_LOOP)
+# STDERR.reopen(GxG::RETURN_LOOP)
 # ### Start GxG Framework
 GxG::RUBY.load_script_from_file("Libraries/lib/bootstrap.rb")
